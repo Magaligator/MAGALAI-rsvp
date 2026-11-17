@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>MAGALAÏ · On se retrouve ?</title>
+  <meta name="description" content="Le 11 décembre 2026, retrouvons-nous pour la soirée MAGALAÏ. Confirmez votre présence dans l’invitation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://magaligator.github.io/MAGALAI-rsvp/">
+  <meta property="og:title" content="MAGALAÏ · Sondage de présence">
+  <meta property="og:description" content="On se retrouve le 11 décembre ? Confirmez votre présence et dites-moi combien vous serez.">
+  <meta property="og:image" content="https://magaligator.github.io/MAGALAI-rsvp/apercu-magalai-logo.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Logo MAGALAÏ doré sur velours bordeaux. Every earring tells her story. On se retrouve ? Sondage de présence.">
+  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="invitation.css?v=5">
+</head>
+<body>
+  <main class="invitation">
+    <section class="cover" aria-label="Invitation MAGALAÏ">
+      <img class="carton" src="carton.webp" width="1254" height="1254" alt="MAGALAÏ. On se retrouve ? 11 décembre 2026 dès 20 h, salle Faguillon à Cologny.">
+      <div class="velvet-curtains" aria-hidden="true"></div>
+      <div class="cover-action">
+        <a class="open-rsvp" href="#reponse">Répondre à l’invitation <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+    <section class="response" id="reponse" tabindex="-1" aria-labelledby="rsvp-title">
+      <div class="response-inner">
+        <p class="event">11 DÉCEMBRE 2026 · DÈS 20 H</p>
+        <h1 id="rsvp-title">Je viens.<br><em>On sera…</em></h1>
+        <form action="https://formsubmit.co/9e48bf6c6c76c807bedd6e3ba9511df9" method="POST" id="rsvp"><input type="hidden" name="_subject" value="MAGALAÏ — Nouvelle confirmation de présence"><input type="hidden" name="_template" value="table"><input type="hidden" name="_next" value="https://magaligator.github.io/Magali/invitation/merci.html"><input type="text" name="_honey" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true"><input type="hidden" name="Nombre total de personnes" id="total" value="1"><div class="first-name"><label for="first-name">Votre prénom</label><input id="first-name" name="Prénom" type="text" autocomplete="given-name" maxlength="80" required></div><fieldset><legend>Vous venez…</legend><div class="choices"><label class="choice"><input type="radio" name="Présence" value="Seul(e)" required><span>Seul(e)</span><small>Juste moi</small></label><label class="choice"><input type="radio" name="Présence" value="Accompagné(e)" required><span>Accompagné(e)</span><small>À plusieurs</small></label></div></fieldset>
+
+<div id="group" hidden><label for="count">Combien serez-vous au total ?</label><p class="hint">Vous compris(e).</p><input id="count" type="number" min="2" max="50" step="1" value="2" inputmode="numeric" disabled></div>
+<button type="submit">Je confirme ma présence</button><p class="note">Si vous venez à plusieurs, une personne peut confirmer pour vous toutes.</p><div id="feedback" role="status" aria-live="polite" tabindex="-1" hidden></div></form>
+        <aside class="girls-night" aria-label="À propos de la soirée">
+        <p class="girls-night-title">Soirée entre femmes</p>
+        <p>Les boucles d’oreilles sont de la partie !</p>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+  <script src="app.js?v=3"></script>
+  <script src="invitation.js"></script>
+</body>
+</html>
