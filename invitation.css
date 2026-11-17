@@ -1,0 +1,214 @@
+:root {
+  --champagne: #dbc172;
+  --ivory: #fff4d9;
+  background: #22050c;
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+body {
+  background: radial-gradient(ellipse at 38% 18%, #56111e, #22050c 72%);
+  color: var(--ivory);
+  padding: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.invitation {
+  width: min(100%, 1240px);
+  max-width: none;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  border: 1px solid #dbc17238;
+  background: #340911;
+}
+.cover {
+  display: grid;
+  isolation: isolate;
+  overflow: hidden;
+  background: #430b17;
+}
+.carton, .cover-action, .cover::after { grid-area: 1 / 1; }
+.carton {
+  width: 100%;
+  height: auto;
+  align-self: center;
+  display: block;
+  animation: reveal 1.1s cubic-bezier(.2,.7,.2,1) both;
+}
+@keyframes reveal {
+  from { opacity: .55; transform: scale(1.025); }
+  to { opacity: 1; transform: scale(1); }
+}
+.cover-action {
+  align-self: end;
+  justify-self: center;
+  z-index: 2;
+  margin: 0 .5rem clamp(.8rem, 3.1vw, 2.8rem);
+}
+.open-rsvp {
+  display: inline-flex;
+  align-items: center;
+  gap: .8rem;
+  padding: .65rem 1rem;
+  border-radius: 3px;
+  background: #380812eb;
+  border: 1px solid #dbc172a6;
+  color: var(--ivory);
+  text-decoration: none;
+  font: 600 clamp(.82rem, 2.9vw, .95rem)/1.35 Arial, sans-serif;
+}
+.open-rsvp:hover { background: #691827; }
+.response {
+  display: grid;
+  place-items: center;
+  padding: clamp(1.5rem, 4vw, 3.75rem);
+  background: radial-gradient(ellipse at 0 0, #611728, #340911 75%);
+}
+.response:focus { outline: 0; }
+.response-inner { width: 100%; max-width: 420px; }
+.event { color: var(--champagne); font-size: .72rem; letter-spacing: .16em; }
+h1 {
+  color: var(--ivory);
+  margin: 1rem 0 1.6rem;
+  font: 400 clamp(2.4rem, 5vw, 4.3rem)/.98 Georgia, serif;
+  letter-spacing: -.04em;
+}
+h1 em { color: var(--champagne); }
+legend { font-size: 1.3rem; }
+.choice { color: var(--ivory); border-color: #dbc17266; background: #fff4d908; }
+.choice:has(input:checked) { border-color: var(--champagne); background: #dbc17226; box-shadow: inset 0 0 0 1px #dbc17280; }
+.choice input { accent-color: var(--champagne); }
+button[type="submit"] { background: var(--champagne); color: #310910; font-weight: 700; justify-content: center; }
+button[type="submit"]:hover { background: #edda9d; }
+.note, .hint, .privacy { color: #f5debdbd; }
+#count { color-scheme: light; }
+.feedback { color: #4b0c17; }
+.answer-visible { animation: settle .45s ease-out both; }
+#group:not([hidden]) { animation: settle .24s ease-out both; }
+@keyframes settle {
+  from { transform: translateY(10px); opacity: .55; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.open-rsvp:focus-visible { outline: 2px solid var(--ivory); outline-offset: 4px; }
+@media(max-width: 780px) {
+  .invitation { grid-template-columns: 1fr; max-width: 620px; }
+  .response { padding: 2rem 1.35rem 2.5rem; scroll-margin-top: .25rem; border-top: 1px solid #dbc17260; }
+  .cover-action { margin-bottom: 3.4%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; }
+}
+.cover::after {
+  content: "";
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(112deg, transparent 43%, #ffe3a512 48%, #fff1ce23 50%, #ffe3a515 52%, transparent 57%);
+  mix-blend-mode: screen;
+  transform: translateX(135%);
+  animation: light-pass 1.8s .15s ease-out both;
+}
+@keyframes light-pass {
+  from { transform: translateX(-135%); }
+  to { transform: translateX(135%); }
+}
+
+/* Texture sampled from the unlettered upper-left edge of the invitation. */
+.invitation {
+  margin-block: clamp(.8rem, 2.5vw, 2.5rem);
+  width: min(calc(100% - 1.5rem), 1240px);
+  border-color: #b8935260;
+  box-shadow: 0 24px 70px #140106aa;
+}
+.cover { position: relative; }
+.velvet-curtains {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+.velvet-curtains::before,
+.velvet-curtains::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: 51%;
+  background:
+    linear-gradient(90deg, #20040bac, transparent 40%, #7c23305c 75%, #26040b6e),
+    url("carton.webp") left top / max(2300px, 700%) auto;
+  box-shadow: 0 0 36px #10010794;
+  will-change: transform;
+}
+.velvet-curtains::before {
+  left: 0;
+  transform-origin: left center;
+  animation: curtain-left .95s cubic-bezier(.6,0,.25,1) .045s both;
+}
+.velvet-curtains::after {
+  right: 0;
+  transform-origin: right center;
+  animation: curtain-right .95s cubic-bezier(.6,0,.25,1) .045s both;
+}
+@keyframes curtain-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-112%) scaleX(.75); }
+}
+@keyframes curtain-right {
+  from { transform: translateX(0); }
+  to { transform: translateX(112%) scaleX(.75); }
+}
+.carton { animation-duration: 1.25s; }
+.cover::after { animation-delay: .55s; }
+.cover-action { z-index: 4; }
+.open-rsvp {
+  min-height: 44px;
+  padding-inline: clamp(.9rem, 2.4vw, 1.5rem);
+  background: linear-gradient(160deg, #f2dfaa, #d0a95e);
+  border-color: #f8df9e;
+  color: #310910;
+  box-shadow: 0 8px 24px #20010c85, inset 0 1px #fff1c6;
+  transition: transform .22s ease;
+}
+.open-rsvp:hover { background: #f4deab; transform: translateY(-2px); }
+.open-rsvp span { font-size: 1.1em; }
+.response {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 25% 18%, #6014214d, #28050be6 83%),
+    url("carton.webp") left top / max(2500px, 690%) auto;
+}
+.response::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-inline-start: 1px solid #b893525e;
+  pointer-events: none;
+}
+.answer-visible { animation: settle .58s cubic-bezier(.2,.7,.2,1) both; }
+.choice { background: #2c070c47; }
+.feedback.success-message {
+  border-color: var(--champagne);
+  background: linear-gradient(145deg, #f8edd3, #f0dfb9);
+}
+@media (max-width: 780px) {
+  .invitation { margin-block: 0; width: 100%; }
+  .response::before { border-inline-start: 0; }
+  .cover-action { margin-bottom: 3.5%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .velvet-curtains { display: none; }
+  .open-rsvp { transition: none; }
+  .open-rsvp:hover { transform: none; }
+}
+
+.response .first-name input {
+  background: #29050cb0;
+  color: var(--ivory);
+  border-color: #dbc1728c;
+}
+
+.invitation .girls-night { --girls-night-title-color: #efce83; }

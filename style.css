@@ -1,0 +1,42 @@
+:root{color-scheme:light;--wine:#5a0b16;--cream:#faf5ec;--gold:#dbc172}*{box-sizing:border-box}body{margin:0;background:#eee5d9;color:var(--wine);font-family:Arial,sans-serif;padding:32px 16px}main{max-width:520px;margin:auto;background:var(--cream);box-shadow:0 20px 80px #38101912}header{background:#570c19;padding:20px 18px 22px;text-align:center;overflow:hidden}.logo{width:320px;max-width:100%;height:82px;position:relative;margin:auto;overflow:hidden}.logo img{position:absolute;width:510px;max-width:none;height:510px;top:-204px;left:calc(50% - 265px)}.signature{font-size:12px;letter-spacing:1.6px;color:var(--gold);margin:5px 0 0}.content{padding:35px 36px 22px}.eyebrow{font-size:10px;letter-spacing:2.4px}h1{font-family:Georgia,serif;font-size:65px;font-weight:400;line-height:.96;letter-spacing:-3px;margin:23px 0}h1 span{font-style:italic;color:#8a1826}.date{font-size:15px;font-weight:600;margin:0 0 7px}.location{font-size:13px;margin:0;color:#79555a}.line{height:1px;width:58px;background:#baa05c;margin:27px 0}fieldset{border:0;padding:0;margin:0}legend{font-family:Georgia,serif;font-size:25px;margin-bottom:15px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:12px}.choice{position:relative;display:flex;flex-direction:column;border:1px solid #d8c9c4;padding:18px 13px;cursor:pointer;border-radius:4px;transition:.18s}.choice input{position:absolute;top:16px;right:12px;accent-color:var(--wine)}.choice span{font-size:15px;margin-top:15px}.choice small{font-size:11px;margin-top:6px;opacity:.7}.choice:has(input:checked){border-color:var(--wine);background:#f1e6e3;box-shadow:inset 0 0 0 1px var(--wine)}.choice:has(input:focus-visible){outline:3px solid #c5a45f;outline-offset:3px}#group{margin:23px 0 0}#group label{font-size:15px;font-weight:600}.hint{font-size:12px;margin:6px 0 11px;color:#79555a}#count{width:100%;padding:12px;font:20px Georgia,serif;color:var(--wine);border:1px solid #cbb7ae;border-radius:4px;background:white}button{display:flex;justify-content:space-between;align-items:center;width:100%;margin-top:24px;padding:17px;background:var(--wine);color:var(--cream);border:0;border-radius:4px;font-size:15px;cursor:pointer}button:hover{background:#7b1525}button:focus-visible{outline:3px solid #b79c55;outline-offset:3px}button span{font-size:21px}.note{text-align:center;font-size:11px;color:#79555a;margin:13px 0 0}.privacy{text-align:center;font-size:10px;line-height:1.7;color:#8a7274;margin:26px 0 0}footer{border-top:1px solid #e3d8ca;padding:19px;text-align:center;font:italic 18px Georgia,serif;color:#967942}.trap{display:none}.success{font-size:18px;line-height:1.6}.back{color:var(--wine)}@media(max-width:540px){body{padding:0}main{min-height:100svh;box-shadow:none}.content{padding:30px 25px 22px}h1{font-size:62px}header{padding-top:13px;padding-bottom:18px}}
+[hidden]{display:none!important}button:disabled{opacity:.65;cursor:wait}.feedback{margin:20px 0 0;padding:23px 20px;border:1px solid #dbc172;border-radius:4px;background:#f1ebe0;line-height:1.6;font-size:14px}.feedback h2{font:28px/1.15 Georgia,serif;margin:0 0 18px}.feedback p{margin:12px 0}.feedback .recap{font-weight:600;border-top:1px solid #d7c6a3;padding-top:14px}.error-message{background:#f5e4e3;border-color:#a73d48}.feedback:focus{outline:2px solid #b79c55;outline-offset:4px}
+
+.first-name {
+  display: grid;
+  gap: .55rem;
+  margin-bottom: 1.4rem;
+}
+.first-name label {
+  font-size: .94rem;
+  font-weight: 600;
+}
+.first-name input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 44px;
+  padding: .65rem .8rem;
+  border: 1px solid #b28a6e;
+  border-radius: 4px;
+  background: #fff9eb;
+  color: #4b0c17;
+  font: inherit;
+  font-size: 16px;
+}
+.first-name input:focus-visible {
+  outline: 2px solid #b89143;
+  outline-offset: 2px;
+}
+aside.girls-night {
+  width: 100%;
+  margin: 1.35rem auto 0;
+  padding: .7rem 0 0;
+  color: inherit;
+  text-align: center;
+}
+.girls-night p { margin: 0; }
+.girls-night .girls-night-title {
+  color: var(--girls-night-title-color, #5c0a18);
+  font: 500 clamp(1.65rem, 4vw, 2.35rem)/1.15 Georgia, serif;
+  margin-bottom: .5rem;
+}
+.girls-night p + p { font: italic 1.05rem/1.4 Georgia, serif; }
